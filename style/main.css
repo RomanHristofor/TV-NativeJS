@@ -1,0 +1,65 @@
+* {
+	transition: all .5s;
+	box-sizing: border-box;
+}
+
+body {
+    background: #bfbfbf;
+    font: 1em sans-serif, Tahoma, Arial;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+
+.head {
+    position: relative;
+    width: 1000px;
+    margin: 50px auto;
+    height: 60px;
+    background: #3bbcbc;
+    border: 1px solid #fff;
+}
+
+.logo {
+    background: red;
+    width: 500px;
+    height: 50px;
+}
+
+.section {
+    width: 300px;
+    margin: 70px 0px 20px 150px;
+    padding: 7px 0;
+    background: #fff;
+}
+
+
+.tv-channel li {
+    list-style: none;
+}
+
+.tv-channel li a {
+    background:#bbb;
+    line-height: 20px;
+    text-decoration: none;
+    color: #000;
+    cursor:pointer;
+    display:block;
+    margin:1px;
+    padding-left:15px;
+    width:200px;
+}
+
+
+
+
+.container {
+    width: 1060px;
+/*    min-width: 100%;*/
+/*    max-width: 1122px;*/
+    margin: 0 auto;
+    background: #fff;
+}
+
