@@ -37,6 +37,41 @@ body {
     width: 400px;
 
 }
+
+.input-search label {
+    position: relative;
+    left: 320px;
+    color: #444;
+}
+
+.input-search input {
+    position: relative;
+    left: -55px;
+    width: 300px;
+    border: 1px solid #000;
+}
+.look {
+    width: 143px;
+    position: relative;
+    height: 35px;
+    left: 900px;
+    top: -80px;
+}
+
+.look i{
+    position: relative;
+    top: 25px;
+    left: 7px;
+}
+.btn-look {
+    width: 160px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    background: #fff;
+    text-indent: 23px;
+}
+
 /* dropdown
     ================================================== */
 .section {
@@ -46,7 +81,7 @@ body {
     padding: 0;
     height: 150px;
     background: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #000;
 }
 
 
