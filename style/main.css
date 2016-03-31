@@ -11,46 +11,83 @@ body {
     padding: 0;
     color: black;
 }
+/* tv-header
+    ================================================== */
+.tv-header {
+    width: 1060px;
+    margin: 0 auto;
+    height: 100px;
+    /*background: red;*/
+}
+.logo {
+    background: red;
+    width: 157px;
+    height: 50px;
+    margin: 10px;
+}
 
-
-.head {
+.tv-search {
+    width: 500px;
     position: relative;
-    width: 1000px;
-    margin: 50px auto;
-    height: 60px;
-    background: #3bbcbc;
+    top: -50px;
+    left: 250px;
+}
+
+.input-search {
+    width: 400px;
+
+}
+/* dropdown
+    ================================================== */
+.section {
+    width: 1060px;
+    /*margin: 70px 0px 20px 150px;*/
+    margin: 0 auto;
+    padding: 0;
+    height: 150px;
+    background: #fff;
     border: 1px solid #fff;
 }
 
-.logo {
-    background: red;
-    width: 500px;
-    height: 50px;
-}
-
-.section {
-    width: 300px;
-    margin: 70px 0px 20px 150px;
-    padding: 7px 0;
-    background: #fff;
-}
 
 
 .tv-channel li {
     list-style: none;
+    width: 250px;
 }
 
+
 .tv-channel li a {
-    background:#bbb;
-    line-height: 20px;
     text-decoration: none;
-    color: #000;
-    cursor:pointer;
-    display:block;
-    margin:1px;
-    padding-left:15px;
-    width:200px;
+    line-height: 30px;
+    font-size: 1.1em;
+    display: block;
+    background: red;
+    position: relative;
+    padding: 5px 15px;
+    text-indent: 17px;
+    color: #fff;
 }
+
+.tv-channel li a:hover {
+    background: #2fc5ff;
+}
+
+
+.dropdown li a {
+    background: #bbb;
+    text-decoration: none;
+    font-size: .8em;
+    color: #fff;
+    cursor: pointer;
+    /*display: none;*/
+    line-height: 20px;
+    margin: 1px;
+    padding: 5px 15px;
+    position: relative;
+    left: -40px;
+}
+
 
 
 
