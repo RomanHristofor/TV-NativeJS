@@ -1,5 +1,5 @@
 * {
-	transition: all .5s;
+	transition: all .3s;
 	box-sizing: border-box;
 }
 
@@ -124,7 +124,6 @@ body {
     display: block;
     background: #ccc;
     padding: 5px 15px;
-    /*text-indent: 17px;*/
     border-radius: 3px;
     color: #444;
     /*text-shadow: 0 1px 0 rgba(255,255,255,.8);*/
@@ -156,5 +155,50 @@ body {
     background: #ededed;
     padding: 5px;
 }
+/* main block
+  ==================================================*/
 
-
+.main-block {
+    padding: 10px;
+}
+.channel-icon {
+    width: 50px;
+}
+.channel-title {
+    position: relative;
+    left: 50px;
+    top: -35px;
+}
+.channel-title a {
+    text-decoration: none;
+    font-weight: 600;
+}
+.channel-title a:hover {
+    text-decoration: underline;
+}
+.channel-list {
+    font-size: 13px;
+    position: relative;
+    top: -15px;
+}
+.tv-block {
+    transition: all 0s;
+    margin: 0 auto;
+    height: 37px;
+}
+.tv-time {
+    font-weight: 600;
+    width: 40px;
+    vertical-align: middle;
+    line-height: 1.25;
+}
+.tv-title {
+    position: relative;
+    width: 250px;
+    top: -16px;
+    left: 40px;
+}
+.tv-block:hover {
+    color: #1113F5;
+    cursor: pointer;
+}
