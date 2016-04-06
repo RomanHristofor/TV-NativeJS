@@ -160,8 +160,6 @@
 
 
 
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
@@ -173,6 +171,46 @@
             $(this).children('ul').slideToggle();
         });
     });
+
+    function asTabs(node) {
+
+      var tabs = [];
+        for (var i = 0; i < node.children.length; i++) {
+          var child = node.children[i];
+          if (child.nodeType == document.ELEMENT_NODE)
+            tabs.push(child);
+        }
+
+        var modal = document.createElement("div");
+          tabs.forEach(function(tab, i) {
+            var div = document.createElement("div");
+            div.setAttribute("class", "my-message");
+            div.innerHTML = '<div class="my-message-title">'+'вавв'+'</div> \
+                                      <div class="my-message-body">'+'вавпывпывпвв'+'</div> \
+                                      <input class="my-message-ok" type="button" value="OK"/>';
+            div.setAttribute("style", "display:none");
+            tab.addEventListener("click", function(){ selectTab(i) } );
+
+            tab.appendChild(div);
+            modal.appendChild(tab);
+          });
+          node.insertBefore(modal, node.firstChild);
+
+      function selectTab(n) {
+
+          for (var i = 0; i < modal.childNodes.length; i++) {
+            if (i == n) {
+              modal.childNodes[i].children[2].style.display = "block";
+            }
+            else {
+              modal.childNodes[i].children[2].style.display = "none";
+            }
+          }
+      }
+
+    }
+    asTabs(document.querySelector(".channel-list"));
+
     </script>
     
 </body>
