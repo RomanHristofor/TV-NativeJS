@@ -194,9 +194,10 @@ body {
 }
 .tv-title {
     position: relative;
-    width: 250px;
+    width: 240px;
     top: -16px;
     left: 40px;
+    display: inline-block;
 }
 .tv-block:hover {
     color: #1113F5;

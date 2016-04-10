@@ -68,24 +68,24 @@
                 </div>
                 <div class="channel-list">
                     <div class="tv-block">
-                        <span class="tv-time">10:20</span>
-                        <div class="tv-title">Клуб редакторов</div>
+                        <span class="tv-time">10:20</span><br>
+                        <span class="tv-title">Клуб редакторов</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">11:00</span>
-                        <div class="tv-title">90 секунд</div>
+                        <span class="tv-time">11:00</span><br>
+                        <span class="tv-title">90 секунд</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">11:05</span>
-                        <div class="tv-title">Комедийный детектив "Любопытная Варвара" (Россия)</div>
+                        <span class="tv-time">11:05</span><br>
+                        <span class="tv-title">Комедийный детектив "Любопытная Варвара" (Россия)</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">12:00</span>
-                        <div class="tv-title">Новости</div>
+                        <span class="tv-time">12:00</span><br>
+                        <span class="tv-title">Новости</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">12:10</span>
-                        <div class="tv-title">Худ. фильм "Это моя собака"</div>
+                        <span class="tv-time">12:10</span><br>
+                        <span class="tv-title">Худ. фильм "Это моя собака"</span>
                     </div>
                 </div>
             </div>
@@ -102,24 +102,24 @@
                 </div>
                 <div class="channel-list">
                     <div class="tv-block">
-                        <span class="tv-time">10:00</span>
-                        <div class="tv-title">Жить здорово!</div>
+                        <span class="tv-time">10:00</span><br>
+                        <span class="tv-title">Жить здорово!</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">11:00</span>
-                        <div class="tv-title">Наши новости </div>
+                        <span class="tv-time">11:00</span><br>
+                        <span class="tv-title">Наши новости </span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">11:05</span>
-                        <div class="tv-title">Новости спорта</div>
+                        <span class="tv-time">11:05</span><br>
+                        <span class="tv-title">Новости спорта</span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">11:10</span>
-                        <div class="tv-title">Модный приговор </div>
+                        <span class="tv-time">11:10</span><br>
+                        <span class="tv-title">Модный приговор </span>
                     </div>
                     <div class="tv-block">
-                        <span class="tv-time">12:20</span>
-                        <div class="tv-title">Таблетка </div>
+                        <span class="tv-time">12:20</span><br>
+                        <span class="tv-title">Таблетка </span>
                     </div>
                 </div>
             </div>
@@ -135,20 +135,20 @@
                 </div>
                 <div class="channel-list">
                     <div class="tv-block">
-                        <div class="tv-time">10:30</div>
-                        <div class="tv-title">24 часа</div>
+                        <span class="tv-time">10:30</span><br>
+                        <span class="tv-title">24 часа</span>
                     </div>
                     <div class="tv-block">
-                        <div class="tv-time">10:40</div>
-                        <div class="tv-title">Семейные драмы</div>
+                        <span class="tv-time">10:40</span><br>
+                        <span class="tv-title">Семейные драмы</span>
                     </div>
                     <div class="tv-block">
-                        <div class="tv-time">11:35</div>
-                        <div class="tv-title">Не ври мне!</div>
+                        <span class="tv-time">11:35</span><br>
+                        <span class="tv-title">Не ври мне!</span>
                     </div>
                     <div class="tv-block">
-                        <div class="tv-time">12:30</div>
-                        <div class="tv-title">Званый ужин</div>
+                        <span class="tv-time">12:30</span><br>
+                        <span class="tv-title">Званый ужин</span>
                     </div>
                 </div>
             </div>
@@ -156,13 +156,10 @@
 
     </div>
 
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="src.js"></script>
     <script>
     $(function(){
         $('.dropdown').hide('dropdown');
@@ -172,44 +169,48 @@
         });
     });
 
-    function asTabs(node) {
+    createMessage( channelArrayObj );
 
-      var tabs = [];
-        for (var i = 0; i < node.children.length; i++) {
-          var child = node.children[i];
-          if (child.nodeType == document.ELEMENT_NODE)
-            tabs.push(child);
-        }
+    function createMessage( channelArrayObj ){
 
-        var modal = document.createElement("div");
-          tabs.forEach(function(tab, i) {
+      var blocks = document.querySelectorAll(".tv-block");
+        for (var i = 0; i < channelArrayObj.length; i++) {
+
             var div = document.createElement("div");
-            div.setAttribute("class", "my-message");
-            div.innerHTML = '<div class="my-message-title">'+'вавв'+'</div> \
-                                      <div class="my-message-body">'+'вавпывпывпвв'+'</div> \
-                                      <input class="my-message-ok" type="button" value="OK"/>';
+            div.setAttribute("id", channelArrayObj[i].id());
+            div.setAttribute("class", "modal");
+            div.innerHTML = '<div class="my-message">\
+                                <div class="my-message-title">'+channelArrayObj[i].title+'</div> \
+                                <div class="my-message-body">'+channelArrayObj[i].body+'</div> \
+                                <input class="my-message-ok" type="button" value="OK"/>\
+                             </div>';
             div.setAttribute("style", "display:none");
-            tab.addEventListener("click", function(){ selectTab(i) } );
 
-            tab.appendChild(div);
-            modal.appendChild(tab);
-          });
-          node.insertBefore(modal, node.firstChild);
-
-      function selectTab(n) {
-
-          for (var i = 0; i < modal.childNodes.length; i++) {
-            if (i == n) {
-              modal.childNodes[i].children[2].style.display = "block";
-            }
-            else {
-              modal.childNodes[i].children[2].style.display = "none";
-            }
-          }
-      }
-
+            blocks[i].appendChild(div);
+        }
+      showModal();
     }
-    asTabs(document.querySelector(".channel-list"));
+
+    function showModal() {
+      var title = document.querySelectorAll(".tv-title");
+      [].forEach.call(title, function( item, i ){
+        if(item.className === 'tv-title'){
+          item.addEventListener("click", function() { handler(i); });
+        }
+      });
+    }
+
+    function handler(n) {
+      var blocks = document.querySelectorAll(".tv-block");
+      for (var q = 0; q < blocks.length; q++) {
+        if (q == n) {
+          blocks[q].children[3].style.display = "block";
+        }
+        else {
+          blocks[q].children[3].style.display = "none";
+        }
+      }
+    }
 
     </script>
     
