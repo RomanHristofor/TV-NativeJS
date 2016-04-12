@@ -157,7 +157,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
     <script src="src.js"></script>
     <script>
@@ -172,45 +172,47 @@
     createMessage( channelArrayObj );
 
     function createMessage( channelArrayObj ){
-
-      var blocks = document.querySelectorAll(".tv-block");
-        for (var i = 0; i < channelArrayObj.length; i++) {
-
-            var div = document.createElement("div");
-            div.setAttribute("id", channelArrayObj[i].id());
-            div.setAttribute("class", "modal");
-            div.innerHTML = '<div class="my-message">\
-                                <div class="my-message-title">'+channelArrayObj[i].title+'</div> \
-                                <div class="my-message-body">'+channelArrayObj[i].body+'</div> \
-                                <input class="my-message-ok" type="button" value="OK"/>\
-                             </div>';
-            div.setAttribute("style", "display:none");
-
-            blocks[i].appendChild(div);
-        }
-      showModal();
-    }
-
-    function showModal() {
-      var title = document.querySelectorAll(".tv-title");
-      [].forEach.call(title, function( item, i ){
-        if(item.className === 'tv-title'){
-          item.addEventListener("click", function() { handler(i); });
-        }
-      });
-    }
-
-    function handler(n) {
-      var blocks = document.querySelectorAll(".tv-block");
-      for (var q = 0; q < blocks.length; q++) {
-        if (q == n) {
-          blocks[q].children[3].style.display = "block";
-        }
-        else {
-          blocks[q].children[3].style.display = "none";
-        }
+    var blocks = document.querySelectorAll(".tv-block");
+      for (var j = 0; j < channelArrayObj.length; j++) {
+        (function(i) {
+        var div = document.createElement("div");
+        div.setAttribute("id", channelArrayObj[i].id());
+        div.setAttribute("class", "modal");
+        div.innerHTML = '<div class="my-message">\
+                            <div class="my-message-title">'+channelArrayObj[i].title+'</div> \
+                            <div class="my-message-body">'+channelArrayObj[i].body+'</div> \
+                            <button class="remove-modal">'+'[x]'+'</button>\
+                         </div>';
+        div.setAttribute("style", "display:none");
+        blocks[i].appendChild(div);
+        })(j);
       }
     }
+    var para = document.querySelectorAll(".tv-title");
+    function isInside(node, target) {
+      for (; node != null; node = node.parentNode)
+        if (node == target) return true;
+    }
+    [].forEach.call(para, function(p, i){
+      var timeout;
+      p.addEventListener("mouseover", function(event) {
+          if (!isInside(event.relatedTarget, p)){
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+              p.nextElementSibling.style.display = "block";
+            }, 1000);
+          }
+      });
+      p.addEventListener("mouseout", function(event) {
+        console.log(timeout);
+          if (!isInside(event.relatedTarget, p)){
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+              p.nextElementSibling.style.display = "none";
+            }, 1000);
+          }
+      });
+    });
 
     </script>
     

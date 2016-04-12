@@ -5,7 +5,7 @@
 
 body {
     background: url(img/grid.png);
-    font: 1em sans-serif, Tahoma, Arial;
+    font: 1em Arial,Helvetica,sans-serif;
     text-transform: uppercase;
 /*    margin: 0;
     padding: 0;*/
@@ -194,13 +194,11 @@ body {
 }
 .tv-title {
     position: relative;
-    width: 240px;
     top: -16px;
     left: 40px;
-    display: inline-block;
 }
-.tv-block:hover {
-    color: #1113F5;
+.tv-title:hover {
+    color: #09f;
     cursor: pointer;
 }
 /*modal*/
