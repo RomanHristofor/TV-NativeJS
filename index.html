@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>TV show</title>
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></link>
-    
-<script src="js/prefixfree.js"></script>
-   <link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>-->
+    <link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/main.css">
 
 </head>
@@ -40,9 +35,10 @@
         ================================================== -->
         <div class="row">
             <div class="nav span4">
-                <ul id="drop" class="tv-channel">
-                    <li class="item-1"><a href="#">Основные каналы</a>
+                <div class="tv-channel">
+                    
                         <ul class="dropdown">
+                            <li class="item-1"><a href="#">Основные каналы</a></li>
                             <li class="item-2"><a href="#">Спорт</a></li>
                             <li class="item-3"><a href="#">Детям</a></li>
                             <li class="item-4"><a href="#">Музыка</a></li>
@@ -51,8 +47,8 @@
                             <li class="item-7"><a href="#">Фильмы и сериалы</a></li>
                             <li class="item-8"><a href="#">Все каналы</a></li>
                         </ul>
-                    </li>
-                </ul>
+                    
+                </div>
             </div>
             <div class="btn span3">
                 <input class="btn-channel-by" tabindex="4" type="button" value="Беларусь">
@@ -187,86 +183,11 @@
         </div>
 
     </div>
-
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>-->
-
+    <script src="js/prefixfree.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
     <script src="js/src.js"></script>
-    <script>
-    // $(function(){
-    //     $('.dropdown').hide('dropdown');
-
-    //     $('#drop li').click(function(){
-    //         $(this).children('ul').toggle("slow");
-    //     });
-    // });
-
-    createMessage( channelArrayObj );
-
-    function createMessage( channelArrayObj ){
-    var blocks = document.querySelectorAll(".tv-block");
-      for (var j = 0; j < channelArrayObj.length; j++) {
-        (function(i) {
-        var div = document.createElement("div");
-        // div.setAttribute("class", channelArrayObj[i].cls);
-        div.setAttribute("class", channelArrayObj[i].className+" modal");
-        div.innerHTML = '<div class="tooltips">\
-                            <div class="tooltips-img">'+channelArrayObj[i].img+'</div> \
-                            <div class="tooltips-title">'+channelArrayObj[i].title+'</div> \
-                            <div class="tooltips-caption">'+channelArrayObj[i].caption+'</div> \
-                            <div class="tooltips-body">'+channelArrayObj[i].body+'</div>\
-                            <button class="tooltips-watch">Хочу посмотреть</button>\
-                            <button class="tooltips-reminder">смс напоминание</button>\
-                         </div>';
-        div.setAttribute("style", "display:none");
-        blocks[i].appendChild(div);
-        })(j);
-      }
-    }
-    var para = document.querySelectorAll(".tv-title");
-    function isInside(node, target) {
-      for (; node != null; node = node.parentNode)
-        if (node == target) return true;
-    }
-    [].forEach.call(para, function(p, i){
-      var timeout;
-      p.addEventListener("mouseover", function(event) {
-          if (!isInside(event.relatedTarget, p)){
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-              p.nextElementSibling.style.display = "block";
-            }, 1000);
-          }
-      });
-      p.addEventListener("mouseout", function(event) {
-          if (!isInside(event.relatedTarget, p)){
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-              p.nextElementSibling.style.display = "none";
-            }, 1000);
-          }
-      });
-    });
-
-    function wantToLook( div ){
-        var input = document.querySelector('.btn-look'),
-            i = document.createElement('i');
-
-        input.addEventListener("click", function(e) {
-            e = e || event;
-            div.removeChild(div.children[0]);
-
-            i.setAttribute("class","fa fa-bookmark");
-            i.setAttribute("aria-hidden","true");
-
-            div.insertBefore(i, input);
-            e.target.style.background = 'yellow';
-            e.target.style.color = '#000';
-        });
-    }
-    wantToLook( document.querySelector('.look') );
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

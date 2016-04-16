@@ -146,55 +146,42 @@ body {
     ================================================== */
 .nav {
     height: 100px;
+    margin-left: 25px;
 }
-.tv-channel li{
+.dropdown {
     list-style: none;
     height: 30px;
     width: 200px;
+    padding: 0;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,.2);
     transition: height .5s ease-in-out .5s;
 }
-.tv-channel li:hover {
+.dropdown:hover {
     height: 240px;
     width: 200px;
 }
-.tv-channel li a {
+.dropdown li a {
     height: 30px;
     width: 200px;
     position: relative;
     text-decoration: none;
     line-height: 30px;
     display: block;
-    background: #ededed;
+    background: #bfbfbf;
     padding: 0 15px;
-    /*border-radius: 3px;*/
-    color: #000;
-    cursor: pointer;
-    z-index:1;
-    transition: background .2s ease-in-out;
-}
-.tv-channel li a:hover {
-    background: #2fc5ff;
-    color: #fff;
-}
-.dropdown {
-    width: 200px;
-    padding: 0;
-}
-.dropdown li:hover {
-    height: 30px;
-}
-.dropdown li a {
-    /*height: 29px;
-    width: 199px;*/
-    text-decoration: none;
     font-size: .8em;
     color: #000;
-    line-height: 20px;
-    /*margin: 1px;*/
-    padding: 5px 15px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background .2s ease-in-out;
 }
+.dropdown li a:hover {
+    background: #2fc5ff;
+    color: #fff;
+    font-size: .9em;
+}
+
 .btn {
     position: relative;
 }
