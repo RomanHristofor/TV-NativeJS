@@ -9,10 +9,10 @@ var CreateModal = {
       }//,
       // id: function(){ var count = 100; return function(){return count++;}; }()
     };
-
+var channel;
 var channelArrayObj = [
   channel = Object.create(CreateModal).constructor(
-      "info",
+      "informative",
       "<img src='style/img/tooltips/by1/club.jpg'>",
       "клуб редакторов",
       "позновательные",

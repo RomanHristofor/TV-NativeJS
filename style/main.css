@@ -1,13 +1,13 @@
 * {
-    transition: all .3s;
     box-sizing: border-box;
+    transition: all .5s;
 }
 
 body {
     background: url(img/grid.png);
+    color: #333;
     font: 1em Arial,Helvetica,sans-serif;
     text-transform: uppercase;
-    color: #333;
 }
 @font-face{
     font-family: textbook;
@@ -20,32 +20,31 @@ body {
 /* CSS Grid
 ========================*/
 .container {
+    background: #fff;
     font-family: textbook;
     font-weight: 300;
-
-    width: 940px;
     margin: 0 auto;
-    background: #fff;
+    width: 940px;
 }
 .row {
     margin-bottom: 20px;
 }
 .row:after {
-    display: block;
+    clear: both;
     content:".";
+    display: block;
     height: 0;
     visibility: hidden;
-    clear: both;
 }
 [class*="span"] {
-    float:left;
     display: inline;
+    float:left;
     margin-right: 20px;
 }
 
 [class*="span"]:last-child {
-    margin-right: 0;
     float: right;
+    margin-right: 0;
 }
 
 .span1  { width:  60px; }
@@ -80,43 +79,44 @@ body {
     margin-top: 15px;
 }
 .logo {
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
     margin: 5px 0 0 15px;
     width: 180px;
-    box-shadow: 0 5px 5px rgba(0,0,0,.2);
 }
 .tv-search {
     margin-top: 20px;
 }
 .form-search {
-    padding: 5px;
     height: auto;
+    padding: 5px;
 }
 .search {
-    padding: 3px;
     height: 35px;
+    outline: 0;
+    padding: 3px;
     width: 300px;
 }
 .go_sch {
-    width: 65px;
-    height: 35px;
-    position: relative;
-    left: -2px;
-    padding: 4px;
     background: #ececec;
     border: none;
+    height: 35px;
+    left: -3px;
+    padding: 4px;
+    position: relative;
+    width: 65px;
 }
 
 .look {
-    margin-top: 25px;
     height: 35px;
+    margin-top: 25px;
     position: relative;
 }
 .look i{
     cursor: pointer;
+    height: 15px;
+    left: 25px;
     position: absolute;
     top: 10px;
-    left: 25px;
-    height: 15px;
     width: 12px;
     z-index:1;
 }
@@ -124,23 +124,24 @@ body {
     background: #fff;
     border-radius: 3px;
     border:none;
-    width: 175px;
     height: 35px;
-    text-indent: 23px;
     margin-left: 5px;
+    outline: 0;
+    text-indent: 23px;
+    width: 175px;
 }
 .btn-look:hover {
     color: #2fc5ff;
 }
 .btn-authorization {
-    width: 90px;
+    background: #ececec;
+    border-radius: 3px;
+    border: none;
     height: 35px;
-    position: relative;
     margin-left: 5px;
     padding: 4px;
-    background: #ececec;
-    border: none;
-    border-radius: 3px;
+    position: relative;
+    width: 90px;
 }
 /* dropdown
     ================================================== */
@@ -149,32 +150,32 @@ body {
     margin-left: 25px;
 }
 .dropdown {
-    list-style: none;
-    height: 30px;
-    width: 200px;
-    padding: 0;
-    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    height: 30px;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
     transition: height .5s ease-in-out .5s;
+    width: 200px;
 }
 .dropdown:hover {
     height: 240px;
     width: 200px;
 }
 .dropdown li a {
-    height: 30px;
-    width: 200px;
-    position: relative;
-    text-decoration: none;
-    line-height: 30px;
-    display: block;
     background: #bfbfbf;
-    padding: 0 15px;
-    font-size: .8em;
     color: #000;
     cursor: pointer;
-    z-index: 1;
+    display: block;
+    font-size: .8em;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    position: relative;
+    text-decoration: none;
     transition: background .2s ease-in-out;
+    width: 200px;
+    z-index: 2;
 }
 .dropdown li a:hover {
     background: #2fc5ff;
@@ -186,95 +187,123 @@ body {
     position: relative;
 }
 .btn-channel-by {
+    background: #ededed;
     border-radius: 3px;
     border: none;
-    background: #ededed;
-    position: absolute;
-    padding: 5px;
-    top: 15px;
     height: 35px;
+    padding: 5px;
+    position: absolute;
+    top: 15px;
     width: 90px;
 }
-.btn-sort div {
-    display: inline-block;
+.btn-sort {
+    height: 20px;
     position: relative;
-    top: 50px;
+    top: 60px;
 }
-.btn-sort input {
-    border-radius: 3px;
-    border: none;
+.btn-sort div {
     background: #ededed;
-    padding: 5px 2px 5px 15px;
-    width: 88px;
-    height: 35px;
+    border-radius: 1px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 30px;
+    margin-right: -5px;
+    position: relative;
+    top: 0;
+    width: 85px;
 }
+
 .btn-sort label {
-    border: 2px solid #d2d2d2;
     border-radius: 12px;
+    border: 2px solid #d2d2d2;
     height: 10px;
-    left: 10px;
-    position: absolute;
+    left: 13px;
     margin: -4px;
-    top: 50%;
+    position: absolute;
+    top: 13px;
     width: 10px;
+    z-index: 1;
+}
+
+.btn-sort input {
+    border: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+}
+
+.btn-sort span {
+    cursor: pointer;
+    font-size: .7em;
+    left: 26px;
+    position: absolute;
+    top: 8px;
 }
 
 .btn-sort-films:hover label {
-    border-color: #0080ce;
+    border: 2px solid #0080ce;
 }
-.btn-sort-series:hover label {
-    border-color: #FFC958;
+.btn-sort-serials:hover label {
+    border: 2px solid #FFC958;
 }
 .btn-sort-sport:hover label {
-    border-color: green;
+    border: 2px solid #068106;
 }
 .btn-sort-children:hover label {
-    border-color: red;
+    border: 2px solid #ff0000;
 }
 
 /* main block
   ==================================================*/
 
 .main-block {
-    padding: 10px 5px 5px 20px;
+    padding: 10px 5px 5px 15px;
     position: relative;
 }
+
 .channel-icon {
     width: 50px;
 }
 .channel-title {
-    position: absolute;
     left: 67px;
+    position: absolute;
     top: 20px;
 }
 .channel-title a {
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
 }
 .channel-title a:hover {
     text-decoration: underline;
 }
 .channel-list {
     font-size: 13px;
-    top: 15px;
     position: relative;
+    top: 15px;
 }
 .tv-block {
-    margin: 0 auto;
     height: 37px;
+    margin: 0 auto;
     position: relative;
 }
 .tv-time {
     font-weight: 600;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
 }
 .tv-title {
+    left: 38px;
     position: relative;
-    transition: color 1s;
     top: -16px;
-    left: 40px;
+    transition: color 1s;
     /*display: inline-block;*/
 }
 .tv-title:hover {
@@ -286,51 +315,98 @@ body {
     position: relative;
 }
 .tooltips {
-    max-width: 300px;
-    height: auto;
     background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.4);
+    height: auto;
+    left: 175px;
+    max-width: 300px;
+    padding: 0 0 15px;
     position: absolute;
     text-align: center;
-    border: 1px solid #ccc;
-    z-index: 1;
-    left: 175px;
     top: -200px;
-    box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.4);
-    padding: 0 0 15px;
+    z-index: 1;
 }
 .tooltips-img {
-    width: auto;
-    min-width: 260px;
     height: auto;
+    min-width: 260px;
+    width: auto;
 }
 .tooltips-title {
-    height: 30px;
     font-size: 1em;
-    padding: 0;
-    margin: 0;
     font-weight: bold;
+    height: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .tooltips-caption {
     color: #888;
-    text-decoration: underline;
     font-size: .8em;
+    text-decoration: underline;
 }
 .tooltips-body {
     font-size: .8em;
+    padding: 9px;
     text-align: left;
     text-indent: 1.5em;
-    padding: 9px;
 }
 .tooltips button {
     margin: 7px 5px 0 5px;
     padding: 8px;
 }
 .tooltips-watch {
-    border: 1px solid #ccc;
     background: transparent;
+    border: 1px solid #ccc;
 }
 .tooltips-reminder {
-    border: 1px solid #ccc;
     background: transparent;
+    border: 1px solid #ccc;
+}
+.footer {
+    color: #444;
+    text-align: center;
+    border-top: 1px dashed #888;
+    padding: 30px 0;
+}
+/* Responsive CSS Grid
+========================*/
+@media only screen and (max-width: 939px) {
+.container { width: 300px; }
+
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 { width: 300px; }
+
+.tv-search, .btn {
+    display: none;
+}
+.btn-look {
+    border: 2px solid #2fc5ff;
+}
+.btn-sort {
+    top: -37px;
+    margin-left: 110px;
+    float: left !important;
+}
+.btn-sort-sport {
+    top: 35px !important;
+    left: -83px !important;
+}
+.dropdown {
+    width: 159px;
+    font-size: .9em;
+}
+.dropdown:hover {
+    height: 240px;
+    width: 159px;
 }
