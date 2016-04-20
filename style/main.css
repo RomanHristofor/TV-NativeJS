@@ -227,6 +227,7 @@ body {
 
 .btn-sort input {
     border: 0;
+    cursor: pointer;
     height: 100%;
     left: 0;
     margin: 0;

@@ -75,73 +75,74 @@ function wantToLook( div ){
     });
 }
 
-getChecked( document.querySelector('.btn-sort') );
-function getChecked( div ) {
-  var input, label, i,
-    checkInput = [],
-    bgArray = ['#0080ce', '#FFC958', 'green', 'red'],
-    classLabelArray = document.querySelectorAll('.check-button');
-    // classInputArray = document.querySelectorAll('.checked');
-// console.log( div );
-    // [].forEach.call(classInputArray, function( currentInput ) {
-// console.log(currentInput);
-      div.addEventListener("click", function(e){
-        e = e || event;
-        for ( i = 0; i < div.children.length; i++) {
-          input = div.children[i].children[1];
-    // console.log(  input );
-          label = div.children[i].children[0];
-          if( input.checked ) {
-      // console.log(e.target.checked );
-    
-            div.children[i].style.background = '#ffeba0';
-            classLabelArray[i].style.background = bgArray[i];
+showColorBtn();
+function showColorBtn() {
+  var input;
+    input = document.querySelectorAll('.checked');
+
+    [].forEach.call(input, function(elem){
+      elem.addEventListener("click", function(e){
+          e = e || event;
+          if( elem.checked ){
+            e.target.parentNode.style.background = '#FFEBA0';
+            e.target.previousElementSibling.style.background = elem.style.background;
             sortTVProgramm( e.target, e.target.style.background );
           }
           else {
-            div.children[i].style.background = '';
-            classLabelArray[i].style.background = '';
+            e.target.parentNode.style.background = '';
+            e.target.previousElementSibling.style.background = '';
             sortTVProgramm( e.target );
           }
-        }
-        // console.log(   checkInput.length   );
       });
-    // });
+    });
 }
-// sortTVProgramm( document.querySelectorAll(".tv-block") );
+
 function sortTVProgramm( input, background ) {
   'use strict';
-  var arrClassListDiv = [], i, divClassList, time,
-      blocksChannells = document.querySelectorAll(".tv-block");
-  // console.log(input);
+  var i, j, divClassList, time, title,
+      blocksChannells = document.querySelectorAll(".tv-block"),
+      inputAllArr = document.querySelectorAll('.checked');
 
-  for (i = 0; i < blocksChannells.length; i++) {
-
+  for(i = 0; i < blocksChannells.length; i++) {
     divClassList = blocksChannells[i].lastChild.classList[0];
     time = blocksChannells[i].children[0]; //tv-time
+    title = blocksChannells[i].children[2]; //tv-title
 
-//console.log(  blocksChannells[i].children[2]  ); //tv-title
     if( input.checked ){
       if( ~input.classList[0].indexOf(divClassList) ){
-
         time.style.background = background;
         time.style.color = '#333';
-// console.log(  background   );
-        // arrClassListDiv.push( divClassList );
+        title.style.color = '#333';
       }
       else if( time.style.background === '' ){
         time.style.color = '#bfbfbf';
+        title.style.color = '#bfbfbf';
       }
     }
     else {
-      
       if( ~input.classList[0].indexOf(divClassList) ){
-        
         time.style.background = '';
-        time.style.color = '#333';
+        time.style.color = '#bfbfbf';
+        title.style.color = '#bfbfbf';
       }
-
+      clearColor(inputAllArr, blocksChannells);
     }
   }
-  // console.log(arrClassListDiv);
+}
+
+function clearColor(inputAllArr, blocksChannells) {
+  var time, title, i, inputOff= [];
+  for(j = 0; j < inputAllArr.length; j++) {
+    if( !inputAllArr[j].checked ){
+      inputOff.push( inputAllArr[j] );
+    }
+  }
+  if( inputOff.length === 4 ){
+    for(i = 0; i < blocksChannells.length; i++) {
+      time = blocksChannells[i].children[0];
+      title = blocksChannells[i].children[2];
+      time.style.color = '#333';
+      title.style.color = '#333';
+    }
+  }
 }
