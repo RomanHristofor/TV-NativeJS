@@ -296,16 +296,16 @@ body {
 }
 .tv-time {
     font-weight: 600;
-    left: 0;
+    left: -3px;
     position: absolute;
-    top: 0;
+    padding: 5px 3px;
+    top: -5px;
 }
 .tv-title {
     left: 38px;
     position: relative;
     top: -16px;
-    transition: color 1s;
-    /*display: inline-block;*/
+    transition: color .7s;
 }
 .tv-title:hover {
     color: #09f;
