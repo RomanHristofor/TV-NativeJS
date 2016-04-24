@@ -1,0 +1,405 @@
+* {
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+body {
+    background: url(img/grid.png);
+    color: #333;
+    font: 1em Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+}
+@font-face{
+    font-family: textbook;
+    src:local('textbook');
+    src:url(font/1wUguRKdVPX0Lw2dlQ1I-l4X0hI.woff),url(font/_qMiA1SBxUbup2B5BieefMuSpsk.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CSS Grid
+========================*/
+.container {
+    background: #fff;
+    font-family: textbook;
+    font-weight: 300;
+    margin: 0 auto;
+    width: 940px;
+}
+.row {
+    margin-bottom: 20px;
+}
+.row:after {
+    clear: both;
+    content:".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+[class*="span"] {
+    display: inline;
+    float:left;
+    margin-right: 20px;
+}
+
+[class*="span"]:last-child {
+    float: right;
+    margin-right: 0;
+}
+
+.span1  { width:  60px; }
+.span2  { width: 140px; }
+.span3  { width: 220px; }
+.span4  { width: 300px; }
+.span5  { width: 380px; }
+.span6  { width: 460px; }
+.span7  { width: 540px; }
+.span8  { width: 620px; }
+.span9  { width: 700px; }
+.span10 { width: 780px; }
+.span11 { width: 860px; }
+.span12 { width: 940px; }
+
+.offset1  { margin-left:  60px; }
+.offset2  { margin-left: 140px; }
+.offset3  { margin-left: 220px; }
+.offset4  { margin-left: 300px; }
+.offset5  { margin-left: 380px; }
+.offset6  { margin-left: 460px; }
+.offset7  { margin-left: 540px; }
+.offset8  { margin-left: 620px; }
+.offset9  { margin-left: 700px; }
+.offset10 { margin-left: 780px; }
+.offset11 { margin-left: 860px; }
+.offset12 { margin-left: 940px; }
+
+/* TV-HEADER
+    ================================================== */
+.tv-logo {
+    margin-top: 15px;
+}
+.logo {
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    margin: 5px 0 0 15px;
+    width: 180px;
+}
+.tv-search {
+    margin-top: 20px;
+}
+.form-search {
+    height: auto;
+    padding: 5px;
+}
+.search {
+    height: 35px;
+    outline: 0;
+    padding: 3px;
+    width: 300px;
+}
+.btn-search {
+    background: #ececec;
+    border: none;
+    height: 35px;
+    left: -3px;
+    padding: 4px;
+    position: relative;
+    width: 65px;
+}
+.look {
+    height: 35px;
+    margin-top: 25px;
+    position: relative;
+}
+.look i {
+    cursor: pointer;
+    height: 15px;
+    left: 25px;
+    position: absolute;
+    top: 10px;
+    width: 12px;
+    z-index:1;
+}
+.btn-look {
+    background: #fff;
+    border-radius: 3px;
+    border:none;
+    height: 35px;
+    margin-left: 5px;
+    outline: 0;
+    text-indent: 23px;
+    width: 175px;
+}
+.btn-look:hover {
+    color: #2fc5ff;
+}
+.btn-authorization {
+    background: #ececec;
+    border-radius: 3px;
+    border: none;
+    height: 35px;
+    margin-left: 5px;
+    padding: 4px;
+    position: relative;
+    width: 90px;
+}
+/* DROPDOWN
+    ================================================== */
+.nav {
+    height: 100px;
+    margin-left: 25px;
+}
+.dropdown {
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    height: 30px;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    transition: height .5s ease-in-out .5s;
+    width: 200px;
+}
+.dropdown:hover {
+    height: 240px;
+    width: 200px;
+}
+.dropdown li a {
+    background: #bfbfbf;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font-size: .8em;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    position: relative;
+    text-decoration: none;
+    transition: background .2s ease-in-out;
+    width: 200px;
+    z-index: 2;
+}
+.dropdown li a:hover {
+    background: #2fc5ff;
+    color: #fff;
+    font-size: .9em;
+}
+.btn {
+    position: relative;
+}
+.btn-channel-by {
+    background: #ededed;
+    border-radius: 3px;
+    border: none;
+    height: 35px;
+    padding: 5px;
+    position: absolute;
+    top: 15px;
+    width: 90px;
+}
+.btn-sort {
+    height: 20px;
+    position: relative;
+    top: 60px;
+}
+.btn-sort div {
+    background: #ededed;
+    border-radius: 1px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 30px;
+    margin-right: -5px;
+    position: relative;
+    top: 0;
+    width: 85px;
+}
+.btn-sort label {
+    border-radius: 12px;
+    border: 2px solid #d2d2d2;
+    height: 10px;
+    left: 13px;
+    margin: -4px;
+    position: absolute;
+    top: 13px;
+    width: 10px;
+    z-index: 1;
+}
+.btn-sort input {
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+}
+.btn-sort span {
+    cursor: pointer;
+    font-size: .7em;
+    left: 26px;
+    position: absolute;
+    top: 8px;
+}
+.btn-sort-films:hover label {
+    border: 2px solid #0080ce;
+}
+.btn-sort-serials:hover label {
+    border: 2px solid #ffc958;
+}
+.btn-sort-sport:hover label {
+    border: 2px solid #068106;
+}
+.btn-sort-children:hover label {
+    border: 2px solid #ff0000;
+}
+
+/* MAIN BLOCK
+  ==================================================*/
+.main-block {
+    padding: 10px 5px 5px 15px;
+    position: relative;
+}
+.channel-icon {
+    width: 50px;
+}
+.channel-title {
+    left: 67px;
+    position: absolute;
+    top: 20px;
+}
+.channel-title a {
+    font-weight: 600;
+    text-decoration: none;
+}
+.channel-title a:hover {
+    text-decoration: underline;
+}
+.channel-list {
+    font-size: 13px;
+    position: relative;
+    top: 15px;
+}
+.tv-block {
+    height: 37px;
+    margin: 0 auto;
+    position: relative;
+}
+.tv-time {
+    font-weight: 600;
+    left: -3px;
+    position: absolute;
+    padding: 5px 3px;
+    top: -5px;
+}
+.tv-title {
+    left: 38px;
+    position: relative;
+    top: -16px;
+    transition: color .7s;
+}
+.tv-title:hover {
+    color: #09f;
+    cursor: pointer;
+}
+/* MODAL
+    ================================================== */
+.modal {
+    z-index: 999;
+}
+.tooltips {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.4);
+    height: auto;
+    left: 175px;
+    max-width: 300px;
+    padding: 0 0 15px;
+    position: absolute;
+    text-align: center;
+    top: -100px;
+    z-index: 99;
+}
+.tooltips-img {
+    height: auto;
+    min-width: 260px;
+    width: auto;
+}
+.tooltips-title {
+    font-size: 1em;
+    font-weight: bold;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+.tooltips-caption {
+    color: #888;
+    font-size: .8em;
+    text-decoration: underline;
+}
+.tooltips-body {
+    font-size: .8em;
+    padding: 9px;
+    text-align: left;
+    text-indent: 1.5em;
+}
+.tooltips button {
+    margin: 7px 5px 0 5px;
+    padding: 8px;
+}
+.tooltips-watch {
+    background: transparent;
+    border: 1px solid #ccc;
+}
+.tooltips-reminder {
+    background: transparent;
+    border: 1px solid #ccc;
+}
+.footer {
+    color: #444;
+    text-align: center;
+    border-top: 1px dashed #888;
+    padding: 30px 0;
+}
+/* Responsive CSS Grid
+========================*/
+@media only screen and (max-width: 939px) {
+.container { width: 300px; }
+
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 { width: 300px; }
+
+.tv-search, .btn {
+    display: none;
+}
+.btn-look {
+    border: 2px solid #2fc5ff;
+}
+.btn-sort {
+    top: -37px;
+    margin-left: 110px;
+    float: left !important;
+}
+.btn-sort-sport {
+    top: 35px !important;
+    left: -83px !important;
+}
+.dropdown {
+    width: 159px;
+    font-size: .9em;
+}
+.dropdown:hover {
+    height: 240px;
+    width: 159px;
+}
