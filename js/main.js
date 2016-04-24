@@ -4,7 +4,6 @@ var blocks = document.querySelectorAll(".tv-block"),
     j;
   for (j = 0; j < channelArrayObj.length; j++) {
     var div = document.createElement("div");
-    // div.setAttribute("class", channelArrayObj[i].cls);
     div.setAttribute("class", channelArrayObj[j].className+" modal");
     div.innerHTML = '<div class="tooltips">' +
                         '<div class="tooltips-img">'+channelArrayObj[j].img+'</div>' +
@@ -18,21 +17,21 @@ var blocks = document.querySelectorAll(".tv-block"),
     blocks[j].appendChild(div);
   }
 }
-// var spans = document.querySelectorAll(".tv-title");
+
 showHideTooltips( document.querySelectorAll(".tv-title") );
 function isInside(node, target) {
   for (; node !== null; node = node.parentNode)
     if (node == target) return true;
 }
 function showHideTooltips(spans){
-  [].forEach.call(spans, function(span, i){
+  [].forEach.call(spans, function(span){
     var timeout;
     span.addEventListener("mouseover", function(event) {
         if (!isInside(event.relatedTarget, span)){
           clearTimeout(timeout);
           timeout = setTimeout(function() {
             span.nextElementSibling.style.display = "block";
-          }, 1000);
+          }, 700);
         }
     });
     span.addEventListener("mouseout", function(event) {
@@ -40,7 +39,31 @@ function showHideTooltips(spans){
           clearTimeout(timeout);
           timeout = setTimeout(function() {
             span.nextElementSibling.style.display = "none";
-          }, 1000);
+          }, 700);
+        }
+    });
+  });
+}
+
+showHideModal( document.querySelectorAll(".modal") );
+function showHideModal(divs){
+  [].forEach.call(divs, function(div){
+    var timeout;
+    div.addEventListener("mouseover", function(event) {
+        if (!isInside(event.relatedTarget, div)){
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+            div.style.display = "block";
+            div.style.cursor = "pointer";
+          }, 700);
+        }
+    });
+    div.addEventListener("mouseout", function(event) {
+        if (!isInside(event.relatedTarget, div)){
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+            div.style.display = "none";
+          }, 700);
         }
     });
   });
@@ -84,7 +107,7 @@ function showColorBtn() {
       elem.addEventListener("click", function(e){
           e = e || event;
           if( elem.checked ){
-            e.target.parentNode.style.background = '#FFEBA0';
+            e.target.parentNode.style.background = '#ffeba0';
             e.target.previousElementSibling.style.background = elem.style.background;
             sortTVProgramm( e.target, e.target.style.background );
           }

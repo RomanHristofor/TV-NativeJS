@@ -73,7 +73,7 @@ body {
 .offset11 { margin-left: 860px; }
 .offset12 { margin-left: 940px; }
 
-/* tv-header
+/* TV-HEADER
     ================================================== */
 .tv-logo {
     margin-top: 15px;
@@ -96,7 +96,7 @@ body {
     padding: 3px;
     width: 300px;
 }
-.go_sch {
+.btn-search {
     background: #ececec;
     border: none;
     height: 35px;
@@ -105,13 +105,12 @@ body {
     position: relative;
     width: 65px;
 }
-
 .look {
     height: 35px;
     margin-top: 25px;
     position: relative;
 }
-.look i{
+.look i {
     cursor: pointer;
     height: 15px;
     left: 25px;
@@ -143,7 +142,7 @@ body {
     position: relative;
     width: 90px;
 }
-/* dropdown
+/* DROPDOWN
     ================================================== */
 .nav {
     height: 100px;
@@ -182,7 +181,6 @@ body {
     color: #fff;
     font-size: .9em;
 }
-
 .btn {
     position: relative;
 }
@@ -212,7 +210,6 @@ body {
     top: 0;
     width: 85px;
 }
-
 .btn-sort label {
     border-radius: 12px;
     border: 2px solid #d2d2d2;
@@ -224,7 +221,6 @@ body {
     width: 10px;
     z-index: 1;
 }
-
 .btn-sort input {
     border: 0;
     cursor: pointer;
@@ -239,7 +235,6 @@ body {
     width: 100%;
     z-index: 12;
 }
-
 .btn-sort span {
     cursor: pointer;
     font-size: .7em;
@@ -247,12 +242,11 @@ body {
     position: absolute;
     top: 8px;
 }
-
 .btn-sort-films:hover label {
     border: 2px solid #0080ce;
 }
 .btn-sort-serials:hover label {
-    border: 2px solid #FFC958;
+    border: 2px solid #ffc958;
 }
 .btn-sort-sport:hover label {
     border: 2px solid #068106;
@@ -261,14 +255,12 @@ body {
     border: 2px solid #ff0000;
 }
 
-/* main block
+/* MAIN BLOCK
   ==================================================*/
-
 .main-block {
     padding: 10px 5px 5px 15px;
     position: relative;
 }
-
 .channel-icon {
     width: 50px;
 }
@@ -311,9 +303,10 @@ body {
     color: #09f;
     cursor: pointer;
 }
-/*modal*/
+/* MODAL
+    ================================================== */
 .modal {
-    position: relative;
+    z-index: 999;
 }
 .tooltips {
     background-color: #fff;
@@ -325,8 +318,8 @@ body {
     padding: 0 0 15px;
     position: absolute;
     text-align: center;
-    top: -200px;
-    z-index: 1;
+    top: -100px;
+    z-index: 99;
 }
 .tooltips-img {
     height: auto;
@@ -340,7 +333,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .tooltips-caption {
     color: #888;
     font-size: .8em;
