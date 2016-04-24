@@ -107,7 +107,7 @@ function showColorBtn() {
       elem.addEventListener("click", function(e){
           e = e || event;
           if( elem.checked ){
-            e.target.parentNode.style.background = '#ffeba0';
+            e.target.parentNode.style.background = '#FFEBA0';
             e.target.previousElementSibling.style.background = elem.style.background;
             sortTVProgramm( e.target, e.target.style.background );
           }
@@ -154,7 +154,7 @@ function sortTVProgramm( input, background ) {
 }
 
 function clearColor(inputAllArr, blocksChannells) {
-  var time, title, i, inputOff= [];
+  var time, title, i, j, inputOff= [];
   for(j = 0; j < inputAllArr.length; j++) {
     if( !inputAllArr[j].checked ){
       inputOff.push( inputAllArr[j] );
