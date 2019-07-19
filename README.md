@@ -5,4 +5,4 @@ Yandex Interface Development School
 
 Implemented by: **HTML, CSS, JS**
 
-page view - http://romanhristofor.github.io/tv-channel/
+page view - http://romanhristofor.github.io/TV-NativeJS
